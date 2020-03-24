@@ -6,7 +6,8 @@ CREATE TABLE usuario(
 	id_usuario integer primary key not null,
 	nombre_usuario text,
 	apellido_usuario text,
-	tipoAcceso integer
+	tipoAcceso integer,
+	foto text
 );
 
 CREATE TABLE trabajo(
@@ -29,5 +30,6 @@ CREATE TABLE profesional(
 CREATE TABLE habilidad(
 	id_habilidad integer primary key not null,
 	calificado integer REFERENCES profesional (id_profesional),
-	calificador integer REFERENCES profesional (id_profesional)
+	calificador integer REFERENCES profesional (id_profesional),
+	puntuacion float4 not null
 );
